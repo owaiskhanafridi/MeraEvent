@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "/WI2SuWBBFETazUyG+WORNGkg69NS7N6WmDDkAt7E5k=",
+  "Source": "MeraEvent.API",
+  "BasePath": "_content/MeraEvent.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
