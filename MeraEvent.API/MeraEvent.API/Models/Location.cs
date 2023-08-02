@@ -6,5 +6,10 @@
         public string Address { get; set; } = string.Empty;
         public string Area { get; set; } = string.Empty;
         public string Landmark { get; set; } = string.Empty;
+        public int HallId { get; set; }
+
+        //Navigation Property
+        public Hall Hall { get; set; }
+
     }
 }

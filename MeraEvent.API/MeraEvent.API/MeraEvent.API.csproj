@@ -18,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Application\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Repositories\EntityFramework\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

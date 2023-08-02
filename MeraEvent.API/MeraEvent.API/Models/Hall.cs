@@ -7,5 +7,9 @@
         public string Description { get; set; } = String.Empty;
         public int Rent { get; set; }
 
+        //Navigation Property
+        public Location Location { get; set; }
+        public List<HallAmenities> HallAmenities { get; set; }
+
     }
 }
