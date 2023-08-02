@@ -66,6 +66,24 @@ namespace MeraEvent.API.Migrations
                     b.ToTable("Halls");
                 });
 
+            modelBuilder.Entity("MeraEvent.API.Models.HallAmenities", b =>
+                {
+                    b.Property<int>("HallId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AmenityId")
+                        .HasColumnType("int");
+
+                    b.Property<float>("ExtraCost")
+                        .HasColumnType("real");
+
+                    b.HasKey("HallId", "AmenityId");
+
+                    b.HasIndex("AmenityId");
+
+                    b.ToTable("HallAmenities");
+                });
+
             modelBuilder.Entity("MeraEvent.API.Models.Location", b =>
                 {
                     b.Property<int>("Id")
@@ -82,13 +100,62 @@ namespace MeraEvent.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("HallId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Landmark")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HallId")
+                        .IsUnique();
+
                     b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("MeraEvent.API.Models.HallAmenities", b =>
+                {
+                    b.HasOne("MeraEvent.API.Models.Amenity", "Amenity")
+                        .WithMany("HallAmenities")
+                        .HasForeignKey("AmenityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MeraEvent.API.Models.Hall", "Hall")
+                        .WithMany("HallAmenities")
+                        .HasForeignKey("HallId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Amenity");
+
+                    b.Navigation("Hall");
+                });
+
+            modelBuilder.Entity("MeraEvent.API.Models.Location", b =>
+                {
+                    b.HasOne("MeraEvent.API.Models.Hall", "Hall")
+                        .WithOne("Location")
+                        .HasForeignKey("MeraEvent.API.Models.Location", "HallId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hall");
+                });
+
+            modelBuilder.Entity("MeraEvent.API.Models.Amenity", b =>
+                {
+                    b.Navigation("HallAmenities");
+                });
+
+            modelBuilder.Entity("MeraEvent.API.Models.Hall", b =>
+                {
+                    b.Navigation("HallAmenities");
+
+                    b.Navigation("Location")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
