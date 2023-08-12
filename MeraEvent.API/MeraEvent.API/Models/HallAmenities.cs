@@ -6,7 +6,7 @@
         public int AmenityId { get; set; }
         public float ExtraCost { get; set; }
 
-        public Hall Hall { get; set; }
-        public Amenity Amenity { get; set; }
+        public Hall? Hall { get; set; }
+        public Amenity? Amenity { get; set; }
     }
 }

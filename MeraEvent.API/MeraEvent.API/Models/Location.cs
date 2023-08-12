@@ -9,7 +9,7 @@
         public int HallId { get; set; }
 
         //Navigation Property
-        public Hall Hall { get; set; }
+        public Hall? Hall { get; set; }
 
     }
 }

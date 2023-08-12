@@ -8,8 +8,8 @@
         public int Rent { get; set; }
 
         //Navigation Property
-        public Location Location { get; set; }
-        public List<HallAmenities> HallAmenities { get; set; }
+        public Location? Location { get; set; }
+        public List<HallAmenities>? HallAmenities { get; set; }
 
     }
 }
