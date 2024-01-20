@@ -1,4 +1,4 @@
-This project is a solution for someone living in abroad, goes to their home country to get married and dont have enough time for the preparation. 
+This project is a solution for someone living abroad, goes to their home country (Pakistan, India, Bangladesh, Nepal) to get married and dont have enough time for the preparation. 
 This project facilitates the groom or bride, from the stitching for their clothes to their honeymoon.
 It will help them manage everything including:
 --Their clothes stitching
