@@ -16,6 +16,7 @@ builder.Services.AddDbContext<MeraEventDBContext>(options => options.UseSqlServe
     ));
 
 var app = builder.Build();
+//test comment;
 
 
 // Configure the HTTP request pipeline.
